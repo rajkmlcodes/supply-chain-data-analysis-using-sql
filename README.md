@@ -1,6 +1,6 @@
 # supply-chain-data-analysis-using-sql
 
-<img width="1536" height="1024" alt="supply-chain-data-analysis-using-sql" src="" />
+<img width="1536" height="1024" alt="supply-chain-data-analysis-using-sql" src="https://github.com/rajkmlcodes/supply-chain-data-analysis-using-sql/blob/main/banner.png?raw=true" />
 
 ````sql
 select count(*) from sc_orders;
