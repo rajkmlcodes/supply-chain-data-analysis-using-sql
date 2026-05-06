@@ -1,5 +1,6 @@
 # supply-chain-data-analysis-using-sql
 
+<img width="1536" height="1024" alt="retail sales analysis sql project image" src="[https://chatgpt.com/s/m_69fb83f5b6f88191aac9ecf9ae7fd600](https://drive.google.com/file/d/1-nPpTQNngpWug-OnmtnhSpYlVtbyyCtU/view?usp=sharing)" />
 
 ````sql
 select count(*) from sc_orders;
