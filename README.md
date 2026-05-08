@@ -1,5 +1,36 @@
 # supply-chain-data-analysis-using-sql
 
+# Supply Chain Data Analysis — MySQL
+
+## Project Overview
+End-to-end SQL analysis of supply chain operations data 
+covering order fulfillment, inventory management, 
+GRN & putaway tracking, and stock transfer operations.
+
+## Business Problems Solved
+- Identified dispatch pending bottlenecks across warehouses
+- Tracked GRN & putaway TAT performance by warehouse
+- Analyzed inventory health and flagged reorder requirements
+- Monitored STO fulfillment gaps between source and destination warehouses
+- Performed data quality checks across 15,800+ supply chain records
+
+## Dataset
+- 4 tables — Orders, Inventory, GRN Putaway, STO Orders
+- 15,800+ rows of realistic supply chain operations data
+- Intentionally includes real-world data quality issues
+
+## Tools Used
+- MySQL 8.0
+- MySQL Workbench
+
+## Key Analysis Areas
+- Data Cleaning & Preparation
+- Order Fulfillment Analysis
+- Inventory Performance Tracking
+- GRN & Putaway TAT Analysis
+- STO Order Monitoring
+- KPI & Performance Metrics
+
 <img width="1536" height="1024" alt="supply-chain-data-analysis-using-sql" src="https://github.com/rajkmlcodes/supply-chain-data-analysis-using-sql/blob/main/banner.png?raw=true" />
 
 ````sql
