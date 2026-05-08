@@ -190,8 +190,66 @@ where sto_status = 'Picking'
 order by qty_requested desc;
 ````
 
+### Fetch picking STO orders with valid pending calculations only
+````sql
+select
+	sto_id,
+    source_warehouse,
+    destination_warehouse,
+    sku_id,
+    qty_requested,
+    qty_dispatched,
+    qty_received,
+    (qty_requested - qty_dispatched) as shipping_pending, -- checking how much qtys shipping is pending
+	(qty_dispatched - qty_received) as receiving_pending, -- checking how much qtys receiving is pending
+    sto_status
+from sc_sto_orders
+where sto_status = 'Picking'
+and qty_dispatched <= qty_requested  -- fetching filtered data with no negative dispatch qtys
+and qty_received <=  qty_dispatched -- fetching filtered data with no negative received qtys
+order by qty_requested desc;
+````
 
-    
+### Show all inventory records where closing stock is below reorder level — sort by warehouse first, then closing stock lowest first.    
+````sql
+select
+	inv_id,
+    warehouse_id,
+    sku_id,
+    category,
+    opening_stock,
+    stock_received,
+    stock_sold,
+    closing_stock,
+    reorder_level
+from sc_inventory
+where closing_stock < reorder_level
+and closing_stock >= 0
+order by warehouse_id asc, closing_stock asc;
+````
+
+````sql
+select count(*) from sc_inventory;
+select count(*) from sc_inventory where closing_stock < reorder_level;
+````
+
+### Checking valid reorder records after removing negative stock
+````sql
+-- select count(*)
+select
+	inv_id,
+    warehouse_id,
+    sku_id,
+    category,
+    opening_stock,
+    stock_received,
+    stock_sold,
+    closing_stock,
+    reorder_level
+from sc_inventory
+where closing_stock < reorder_level
+and closing_stock >= 0;
+````    
 
 
 ### Select Statement
