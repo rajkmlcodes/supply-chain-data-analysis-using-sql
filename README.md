@@ -1,6 +1,6 @@
 # supply-chain-data-analysis-using-sql
 
-# Supply Chain Data Analysis — MySQL
+<img width="1536" height="1024" alt="supply-chain-data-analysis-using-sql" src="https://github.com/rajkmlcodes/supply-chain-data-analysis-using-sql/blob/main/banner.png?raw=true" />
 
 ## Project Overview
 End-to-end SQL analysis of supply chain operations data 
@@ -30,8 +30,6 @@ GRN & putaway tracking, and stock transfer operations.
 - GRN & Putaway TAT Analysis
 - STO Order Monitoring
 - KPI & Performance Metrics
-
-<img width="1536" height="1024" alt="supply-chain-data-analysis-using-sql" src="https://github.com/rajkmlcodes/supply-chain-data-analysis-using-sql/blob/main/banner.png?raw=true" />
 
 ````sql
 select count(*) from sc_orders;
