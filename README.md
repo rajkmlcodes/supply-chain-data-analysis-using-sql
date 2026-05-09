@@ -280,6 +280,25 @@ where closing_stock < reorder_level
 and closing_stock >= 0;
 ````    
 
+### In the GRN table, find all unique GRN status values that contain the word 'Pend' anywhere in them
+````sql
+select distinct(grn_status)
+from sc_grn_putaway
+where grn_status like '%Pend%';
+````
+
+### Find all orders where SKU ID starts with 'SKU_01
+````sql
+select
+	order_id,
+    warehouse_id,
+    qty_ordered,
+    qty_dispatched,
+    order_status
+from sc_orders
+where sku_id like 'SKU_01%';
+````
+
 
 ### Select Statement
 ````sql
