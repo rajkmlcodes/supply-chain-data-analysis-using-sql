@@ -320,6 +320,20 @@ group by warehouse_id
 order by total_qty_ordered desc;
 ````
 
+### Manager wants a complete order summary by city — total orders, total qty ordered, total qty dispatched, and average qty per order
+
+````sql
+select
+	city,
+	count(*) as total_orders,
+    sum(qty_ordered) as total_qty_ordered,
+    sum(qty_dispatched) as total_qty_dispatched,
+    avg(qty_ordered)
+from sc_orders
+group by city
+order by total_orders desc;
+````
+
 ### Select Statement
 ````sql
 select * from sc_inventory;
