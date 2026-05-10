@@ -321,7 +321,6 @@ order by total_qty_ordered desc;
 ````
 
 ### Manager wants a complete order summary by city — total orders, total qty ordered, total qty dispatched, and average qty per order
-
 ````sql
 select
 	city,
@@ -333,6 +332,30 @@ from sc_orders
 group by city
 order by total_orders desc;
 ````
+
+### Manager says: I need city-wise AND status-wise breakdown — how many Pending, Dispatched, Delivered orders in each city?
+````sql
+select
+	city,
+    order_status,
+    count(*) as total_orders
+from sc_orders
+where city is not null and city !=''
+group by city, order_status
+order by city asc, total_orders desc;
+````
+
+### How many GRN records per warehouse — total quantity received per warehouse? Sort by total qty received highest first.
+````sql
+select 
+	warehouse_id,
+    sum(qty_received) as total_qty_received,
+    count(*) as total_grn_records
+from sc_grn_putaway
+group by warehouse_id
+order by total_qty_received desc;
+````
+
 
 ### Select Statement
 ````sql
