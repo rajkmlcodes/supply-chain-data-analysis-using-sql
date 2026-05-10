@@ -299,6 +299,26 @@ from sc_orders
 where sku_id like 'SKU_01%';
 ````
 
+## GROUPBY & AGGREGATIONS
+### Your manager wants a summary report — how many orders does each city have? He wants to know which cities have the highest order volume.
+````sql
+select
+    city,
+    count(*) as total_orders
+from sc_orders
+group by city
+order by total_orders desc;
+````
+
+### Manager says: I need warehouse-wise total quantity ordered — which warehouse is handling the most volume?
+````sql
+select
+	warehouse_id,
+    sum(qty_ordered) as total_qty_ordered
+from sc_orders
+group by warehouse_id
+order by total_qty_ordered desc;
+````
 
 ### Select Statement
 ````sql
